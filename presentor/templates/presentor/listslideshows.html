@@ -1,0 +1,5 @@
+<h2>Load presentation</h2>
+<p>Select a presentation from the list below.</p>
+{% for show in showslist %}
+    <a class="small button" onclick="playSlideshow({{ show.id }})">{{ show.title }}</a>
+{% endfor %}

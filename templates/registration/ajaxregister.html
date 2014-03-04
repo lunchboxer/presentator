@@ -1,0 +1,24 @@
+{% extends "registration/ajaxlogin.html" %}
+
+{% block heading %}Sign up{% endblock %}
+
+{% block formclass %}register{% endblock %}
+
+{% block extrafields %}
+    <div id="password-field">
+        <label for="id_password1">Password</label>
+        <input id="id_password1" name="password1" type="password" required pattern="[a-zA-Z0-9]{6,32}">
+        <small class="error">A valid password with 6-32 letters and numbers is required.</small>
+    </div>
+
+    <div id="password-confirmation-field">
+        <label for="id_password2">Confirm password</label>
+        <input id="id_password2" name="password2" type="password" required data-equalto="id_password1">
+        <small class="error">Passwords do not match.</small>
+    </div>
+{% endblock extrafields %}
+
+{% block buttons %}
+    <button id="newUser" class="small button"><i class="fa fa-plus"></i> Sign up</button>
+    <a href="#" id="cancel" class="small button"><i class="fa fa-times"></i> Cancel</a>
+{% endblock buttons %}

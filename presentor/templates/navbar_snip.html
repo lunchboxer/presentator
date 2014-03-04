@@ -1,0 +1,30 @@
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <h1><a href="#">Present0r</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon">
+            <a href="#">Menu</a>
+        </li>
+    </ul>
+    <section class="top-bar-section navlinks{% if user.is_anonymous %} hidden{% endif %}">
+        <ul class="right">
+            <li class="menuitem control">
+                <a href="#" id="showlist"><i class="fa fa-suitcase"></i> Slideshows</a>
+            </li>
+            <li class="menuitem">
+                <a href="#" id="showsettings"><i class="fa fa-gear"></i> Settings</a>
+            </li>
+            <li class="menuitem">
+                <a href="#" id="noteslink"><i class="fa fa-file-text-o"></i> Notes</a>
+            </li>
+            <li class="menuitem">
+                <a href="#" id="logoutlink"><i class="fa fa-sign-out"></i> Log out</a>
+            </li>
+        </ul>
+        <ul class="left">     
+            <li>
+            </li>
+        </ul>
+    </section>
+</nav>

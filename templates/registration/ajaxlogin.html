@@ -1,0 +1,36 @@
+{% if user.is_authenticated %}
+    <p>You are already logged in as {{ user.username }}</p>
+{% else %}
+
+<div class="row">
+    <div class="large-3 columns"></div>
+    <div class="login large-4 columns">
+        <h2>{% block heading %}Log in{% endblock %}</h2>
+
+        <form class="{% block formclass %}login{% endblock %}" method="post" data-abide="ajax">
+            {% csrf_token %}
+            <div id="name-field">
+                <label for="id_username">Username</label>
+                <input id="id_username" maxlength="254" name="username" type="text" required parttern="alphanumeric">
+                <small class="error">Username required. Only letters, numbers and spaces allowed.</small>
+            </div>
+
+            {% block extrafields %}
+            <div id="password-field">
+                <label for="id_password">Password</label>
+                <input id="id_password" name="password" type="password" required pattern="[a-zA-Z0-9]{6,32}">
+                <small class="error">A valid password with 6-32 letters and numbers is required.</small>
+            </div>
+
+            {% endblock extrafields %}
+            {% block buttons %}
+            <button id="loginSubmit" class="small button"><i class="fa fa-sign-in"></i> Log in</button>
+            <a href="#" id="newUser" class="small button"><i class="fa fa-plus"></i> Sign up</a>
+            {% endblock %}
+
+        </form>
+    </div>
+    <div class="large-5 columns"></div>
+</div>
+
+{% endif %}

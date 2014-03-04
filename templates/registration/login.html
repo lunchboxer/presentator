@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% load url from future %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block body_id %}login{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="large-3 columns"></div>
+        <div id="login" class="large-6 columns">
+            <h1>Log in <i class="fa fa-sign-in"></i></h1>
+
+            {% if form.errors %}
+                <p>Your username and password didn't match. Please try again.</p>
+            {% endif %}
+
+            <form id="login" method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <label for="id_username">Username</label>
+                {{ form.username }}
+                <label for="id_password">Password</label>
+                {{ form.password }}
+                <input type="submit" class="small button" value="Log in" />
+                <input type="hidden" name="next" value="{{ next }}" />
+            </form>
+        </div>
+        <div class="large-3 columns"></div>
+    </div>
+
+{% endblock %}

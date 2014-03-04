@@ -1,0 +1,212 @@
+{% extends "common.html" %}
+{% load static %}
+
+{% block title %}Present0r - let's play!{% endblock title %}
+
+{% block head_extras  %}
+{% endblock head_extras %}
+
+{% block navbar %} 
+    {% include "navbar_snip.html" %}
+{% endblock navbar %}
+
+{% block main %}
+
+    <div id="status">
+       <!--dirty hack to fix broken alert closing -->
+        <div data-alert class="alert-box" style="display:none">
+        </div>
+    </div>
+
+    <div id="loading_indicator">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+    </div>
+
+    <div id="main">
+        <h2>Welcome to Present0r, let's play!</h2>
+    </div>
+
+
+{% endblock main %}
+
+
+{% block jsfoot2 %}
+
+<script>
+
+// WAMP session object
+var sess = null;
+
+$(document).ready(function() {
+
+    {% if user.is_authenticated %}
+        {% if perms.presentor.control_presentation %}
+            loadController();
+        {% else %}
+            loadStudent();
+        {% endif %}
+    {% else %}
+        getLogin(); 
+    {% endif %}
+
+    $('#logoutlink').click(function(){
+        logout();
+    });
+    
+    $('#showlist').click(function(){
+        loadSlideList();
+    });
+
+    $(document).ajaxStart(function() {
+        $("#loading_indicator").show();
+    }).ajaxStop(function() {
+        $("#loading_indicator").hide();
+    });
+    // hack to hide the menu when a menu item is clicked
+    $('.top-bar .menuitem').click(function(){
+        $(".toggle-topbar").trigger("click");
+    });
+
+});
+
+function logout(where){
+    // when the server tells us we aren't logged in we'll need to run the logout cleanup
+    if ( where === "local" ){
+        showAlert("You are now logged out.", "success");
+        getLogin();
+    } else { 
+        $.getJSON('/accounts/ajaxlogout').done(function(response){    
+            if(response.logout === "success"){
+                showAlert("You are now logged out.", "success");
+            } else {
+                showAlert("Unable to log out, perhaps you were already logged out.", "warning" );
+            }
+            getLogin();
+        });
+    }
+    $(".menuitem.control").hide();
+    $(".navlinks").hide();
+}
+
+function getLogin() {
+    var errorsFunct = function(){
+        showAlert("Enter a valid username and password.", "warning");
+    };
+    getAuth("/accounts/ajaxlogin", "login", errorsFunct);
+}
+
+function getRegister() {
+    var errorsFunct = function(errors) {
+        showAlert("Form errors need to be corrected.", "warning");
+        if (errors.username){
+            showFormError($('#id_username'), errors.username.join('. '));                            
+        }
+    };
+    getAuth("/accounts/ajaxregister", "register", errorsFunct);
+}
+
+// Retrieving login or registration with instructions for what do with it.
+// type is "login" or "register" form should have class of same name
+function getAuth(url, type, errorsFunct) {
+    $("#main").load(url, function() {
+        authForm = $('form.' + type);
+        authForm.submit(function(event){
+            event.preventDefault();
+        });
+        $("#cancel").click(function(){
+            getLogin();
+        });
+        $("#newUser").click(function(){
+            getRegister(); 
+        });
+        authForm.foundation({bindings: 'events'});   
+        authForm.on('invalid', function () {
+            var invalid_fields = $(this).find('[data-invalid]');
+            showAlert("Fix form errors before continuing.", "warning");     
+        })
+        authForm.on('valid', function () {
+            formData = authForm.serialize();
+            $.ajax({
+                url: url,
+                data: formData,
+                type: "POST",
+                dataType: "json",
+                success: function(response) {
+                    if (response.form_errors) {
+                        errorsFunct(response.form_errors);
+                    } else {
+                        postLogin(response, type);
+                    }
+                },
+                error: function( xhr, status ) {
+                    showAlert("Something went wrong with the connection.", "warning");
+                },
+            });
+        });
+    });
+}
+
+// clear the login form and load the appropriate interface
+function postLogin(response, type){
+    $("#main").html("");
+    $(".navlinks").show();
+    username = response.username;
+    if (type === "register") {
+        message = "Registered and logged in as" + username;
+    } else {
+        message = "Welcome back, " + username + "!";
+    }
+    showAlert(message, "success");
+    if (response.in_controllers) {
+        loadController();
+    } else {
+        loadStudent();
+    }
+}
+
+function loadController(){
+    $.ajax({
+        url: "{% static 'presentor/js/control.js' %}",
+        cache: true,
+        dataType: "script",
+    });
+}
+
+function loadStudent(){
+}
+
+
+ // pass it the input jQuery object
+function showFormError(input, message) {
+    input.attr("data-invalid", "data-invalid");
+    input.siblings("small.error").html(message);
+    input.parent("div").addClass("error");
+}
+
+// types are the default (neutral), success, and warning
+function showAlert(message, alertType) {
+    var alertIcon = "info-circle";
+    var alertId = "alert" + Math.floor(Math.random() * 10000);
+    var alertTimeout = 5000;
+    if (alertType === 'success'){
+        alertIcon = "check-circle";
+    } else if (alertType === 'warning'){
+        alertIcon = "exclamation-triangle";
+        $("html, body").animate({ scrollTop: 0 }, "fast");
+    }
+    var $newAlertElement = $("<div/>", {
+            html: '<i class="fa fa-' + alertIcon + '"></i> ' + message + '<a href="#" class="close">&times;</a>',
+            "class": "alert-box radius " + alertType,
+            "data-alert": "",
+            id: alertId
+    });
+    $('#status').html($newAlertElement);
+    setTimeout(function(){
+            $('#' + alertId).fadeOut(300, function() { $(this).remove(); })
+            }, alertTimeout);
+}
+</script>
+{% endblock jsfoot2 %}

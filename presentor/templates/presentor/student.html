@@ -1,0 +1,66 @@
+{% extends "common.html" %}
+
+{% block title %}Student view{% endblock title %}
+
+{% block navbar %} 
+    {% include "navbar_snip.html" %}
+{% endblock navbar %}
+
+
+{% block main %}
+        
+<div id="main">
+   
+    <div id="pushnote">
+        <span>Fill in the blank with the correct word</span>
+        <h3>"Last year I  _____  up smoking for good."</h3>
+        <ul id="answers">
+                <li><a href="#" class="mcButton">got</a></li>
+                <li><a href="#" class="mcButton">give</a></li>
+                <li><a href="#" class="mcButton">gave</a></li>
+                <li><a href="#" class="mcButton">gived</a></li>
+        </ul>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block jsfoot2 %}
+<script>
+$(document).ready(function() {
+        $('#loginlink').click(function() {
+            getLogin();  
+        });
+        $('.top-bar .menuitem').click(function(evt){
+            $(".toggle-topbar").click();
+
+        });
+});
+var flash = function() {
+    $('body').append("<div id='bang' class='flash'></div>");
+    $('body').addClass("flash");
+    setTimeout(function() {
+        $('#bang').remove();
+        $('body').removeClass("flash");
+    }, 50);
+}
+var getLogin = function() {
+    $.ajax({
+        url: "/accounts/ajaxloginform",
+        type: "GET",
+        dataType : "html",
+        success: function( response ) {
+            $( "#main" ).html(response);
+        },
+        error: function( xhr, status ) {
+            alert( "Sorry, there was a problem!" );
+        },
+        complete: function( xhr, status ) {
+            <!--alert( "The request is complete!" );-->
+        }
+    });        
+}
+
+</script>
+{% endblock %}

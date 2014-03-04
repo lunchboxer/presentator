@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Slideshow{% endblock title %}
+{% block stylesheet  %}
+{% static 'presentor/css/show.css' %}
+{% endblock stylesheet %}
+
+{% block body %}
+    <div id="main">
+        <div id="slide-container">
+            <h2 id="placeholder">Present0r</h2>
+        </div>
+    <div>
+
+{% endblock %}
+
+{% block jsfoot2 %}
+
+<script type="text/javascript" src="{% static 'presentor/js/show_combined.min.js' %}"></script>
+
+<script type="text/javascript" charset="utf-8">
+// WAMP session object
+var sess = null;
+
+var slidecount = 0;
+var slidenumber = 0;
+var showid = false;
+var showtitle = "";
+
+window.onload = function() {
+ 
+   var wsuri;
+   if (window.location.protocol === "file:") {
+      wsuri = "ws://192.168.1.106:9000";
+   } else {
+      wsuri = "ws://" + window.location.hostname + ":9000";
+   }
+ 
+   // connect to WAMP server
+   ab.connect(wsuri,
+ 
+      // WAMP session was established
+      function (session) {
+         sess = session;
+         console.log("Connected to " + wsuri);
+        sess.subscribe("http://192.168.1.106/messages", onEvent);
+        publishCommand("screen_connected");
+      },
+ 
+      // WAMP session is gone
+      function (code, reason) {
+         sess = null;
+         if (code == ab.CONNECTION_UNSUPPORTED) {
+            window.location = "http://autobahn.ws/unsupportedbrowser";
+         } else {
+            console.log(reason);
+         }
+      }
+   );
+};
+ 
+function onEvent(topicUri, event) {
+    if ( event.command === "nextSlide" ){
+        nextSlide();
+    }
+    if ( event.command === "previousSlide" ){
+        previousSlide();
+    }
+    if ( event.command === "controller_connected" ) {
+        hollaBack();
+    }
+    if ( event.command === "playSlideshow" ){
+        playSlideshow(event.data);
+    }
+}
+ 
+function publishCommand(command, data) {
+   sess.publish("http://192.168.1.106/messages", {'command': command, 'data': data});
+}
+
+
+$(document).click(nextSlide);
+
+function nextSlide(){
+    if (slidecount > 0 && slidenumber <= slidecount){
+        slidenumber++;
+        $('.slide').hide();
+        $('.slide.' + slidenumber).show();
+        hollaBack();
+        $('body').toggleClass("inverse");
+        $('#slide-container h2').toggleClass("inverse"); 
+    }
+}
+function previousSlide(){
+    if (slidecount > 0 && slidenumber > 0){
+        slidenumber--;
+        $('.slide').hide();
+        $('.slide.' + slidenumber).show();
+        hollaBack();
+        $('body').toggleClass("inverse");
+        $('#slide-container h2').toggleClass("inverse"); 
+    }
+}
+
+function playSlideshow(id){
+    showid = id;
+    $.ajax({
+        type: 'get',
+        timeout: 5000,
+        url: "/presentor/fetchshow/" + id,
+        success: function(data, textStatus, XMLHttpRequest){
+            slidenumber = 0;
+            $("#main").html(data);
+            $('#bigtext').bigtext({maxfontsize:84})
+            slidecount = $('#slide-container').data('count');
+            showtitle = $('#slide-container').data('title');
+            $('.slide').hide();
+            $('body').removeClass('inverse');
+            $('.slide-container h2').removeClass('inverse');
+            nextSlide();
+        },
+        error:function (xhr){
+            if (xhr.status === 404){
+                publishCommand("error", "Presentation could not be found.");
+            }
+        }
+    });
+}
+
+function hollaBack(){
+    // is there a slideshow loaded
+    if(slidecount > 0 ){
+        publishCommand("slideInfo", {"count": slidecount, "title": showtitle,
+                "id": showid, "current_slide": slidenumber});
+    } else {
+        publishCommand("showlist");
+    }
+}
+</script>
+{% endblock jsfoot2 %}

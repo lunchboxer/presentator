@@ -1,0 +1,13 @@
+<div id="slide-container" data-title="{{ title }}" data-count="{{ slides|length }}">
+    <div id="bigtext">
+
+        {% for index, slide in slides.items %}
+            {% for p in slide %}
+                <h2 class="slide {{ index }}">{{ p }}</h2>
+            {% endfor %}
+        {% endfor %}
+
+        <h2 class="slide {{ slides|length|add:'1'}}">The End</h2>
+        
+    </div>
+</div>

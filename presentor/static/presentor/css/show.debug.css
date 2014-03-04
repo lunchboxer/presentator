@@ -1,0 +1,628 @@
+/* line 257, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+meta.foundation-version {
+  font-family: "/5.1.0/"; }
+
+/* line 262, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+meta.foundation-mq-small {
+  font-family: "/only screen and (max-width: 40em)/";
+  width: 0em; }
+
+/* line 267, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+meta.foundation-mq-medium {
+  font-family: "/only screen and (min-width:40.063em)/";
+  width: 40.063em; }
+
+/* line 272, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+meta.foundation-mq-large {
+  font-family: "/only screen and (min-width:64.063em)/";
+  width: 64.063em; }
+
+/* line 277, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+meta.foundation-mq-xlarge {
+  font-family: "/only screen and (min-width:90.063em)/";
+  width: 90.063em; }
+
+/* line 282, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+meta.foundation-mq-xxlarge {
+  font-family: "/only screen and (min-width:120.063em)/";
+  width: 120.063em; }
+
+/* line 287, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+meta.foundation-data-attribute-namespace {
+  font-family: false; }
+
+/* line 292, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+html, body {
+  height: 100%; }
+
+/* line 299, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 304, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+html, body {
+  font-size: 100%; }
+
+/* line 307, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+body {
+  background: #333333;
+  color: #cccccc;
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  position: relative;
+  cursor: default; }
+
+/* line 320, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+a:hover {
+  cursor: pointer; }
+
+/* line 325, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+img, object, embed {
+  max-width: 100%;
+  height: auto; }
+
+/* line 328, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+object, embed {
+  height: 100%; }
+
+/* line 329, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+img {
+  -ms-interpolation-mode: bicubic; }
+
+/* line 335, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+#map_canvas img, #map_canvas embed, #map_canvas object, .map_canvas img, .map_canvas embed, .map_canvas object {
+  max-width: none !important; }
+
+/* line 340, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+.left {
+  float: left !important; }
+
+/* line 341, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+.right {
+  float: right !important; }
+
+/* line 342, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+.clearfix {
+  *zoom: 1; }
+  /* line 130, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+  .clearfix:before, .clearfix:after {
+    content: " ";
+    display: table; }
+  /* line 131, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+  .clearfix:after {
+    clear: both; }
+
+/* line 343, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+.hide {
+  display: none; }
+
+/* line 349, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/* line 352, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+img {
+  display: inline-block;
+  vertical-align: middle; }
+
+/* line 362, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+textarea {
+  height: auto;
+  min-height: 50px; }
+
+/* line 365, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
+select {
+  width: 100%; }
+
+/* line 110, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+.text-left {
+  text-align: left !important; }
+
+/* line 111, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+.text-right {
+  text-align: right !important; }
+
+/* line 112, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+.text-center {
+  text-align: center !important; }
+
+/* line 113, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+.text-justify {
+  text-align: justify !important; }
+
+@media only screen and (max-width: 40em) {
+  /* line 116, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .small-only-text-left {
+    text-align: left !important; }
+  /* line 117, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .small-only-text-right {
+    text-align: right !important; }
+  /* line 118, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .small-only-text-center {
+    text-align: center !important; }
+  /* line 119, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .small-only-text-justify {
+    text-align: justify !important; } }
+
+@media only screen {
+  /* line 123, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .small-text-left {
+    text-align: left !important; }
+  /* line 124, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .small-text-right {
+    text-align: right !important; }
+  /* line 125, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .small-text-center {
+    text-align: center !important; }
+  /* line 126, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .small-text-justify {
+    text-align: justify !important; } }
+
+@media only screen and (min-width:40.063em) and (max-width:64em) {
+  /* line 130, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .medium-only-text-left {
+    text-align: left !important; }
+  /* line 131, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .medium-only-text-right {
+    text-align: right !important; }
+  /* line 132, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .medium-only-text-center {
+    text-align: center !important; }
+  /* line 133, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .medium-only-text-justify {
+    text-align: justify !important; } }
+
+@media only screen and (min-width:40.063em) {
+  /* line 137, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .medium-text-left {
+    text-align: left !important; }
+  /* line 138, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .medium-text-right {
+    text-align: right !important; }
+  /* line 139, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .medium-text-center {
+    text-align: center !important; }
+  /* line 140, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .medium-text-justify {
+    text-align: justify !important; } }
+
+@media only screen and (min-width:64.063em) and (max-width:90em) {
+  /* line 144, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .large-only-text-left {
+    text-align: left !important; }
+  /* line 145, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .large-only-text-right {
+    text-align: right !important; }
+  /* line 146, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .large-only-text-center {
+    text-align: center !important; }
+  /* line 147, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .large-only-text-justify {
+    text-align: justify !important; } }
+
+@media only screen and (min-width:64.063em) {
+  /* line 151, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .large-text-left {
+    text-align: left !important; }
+  /* line 152, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .large-text-right {
+    text-align: right !important; }
+  /* line 153, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .large-text-center {
+    text-align: center !important; }
+  /* line 154, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .large-text-justify {
+    text-align: justify !important; } }
+
+@media only screen and (min-width:90.063em) and (max-width:120em) {
+  /* line 158, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .xlarge-only-text-left {
+    text-align: left !important; }
+  /* line 159, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .xlarge-only-text-right {
+    text-align: right !important; }
+  /* line 160, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .xlarge-only-text-center {
+    text-align: center !important; }
+  /* line 161, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .xlarge-only-text-justify {
+    text-align: justify !important; } }
+
+@media only screen and (min-width:90.063em) {
+  /* line 165, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .xlarge-text-left {
+    text-align: left !important; }
+  /* line 166, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .xlarge-text-right {
+    text-align: right !important; }
+  /* line 167, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .xlarge-text-center {
+    text-align: center !important; }
+  /* line 168, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .xlarge-text-justify {
+    text-align: justify !important; } }
+
+@media only screen and (min-width:120.063em) and (max-width:99999999em) {
+  /* line 172, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .xxlarge-only-text-left {
+    text-align: left !important; }
+  /* line 173, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .xxlarge-only-text-right {
+    text-align: right !important; }
+  /* line 174, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .xxlarge-only-text-center {
+    text-align: center !important; }
+  /* line 175, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .xxlarge-only-text-justify {
+    text-align: justify !important; } }
+
+@media only screen and (min-width:120.063em) {
+  /* line 179, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .xxlarge-text-left {
+    text-align: left !important; }
+  /* line 180, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .xxlarge-text-right {
+    text-align: right !important; }
+  /* line 181, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .xxlarge-text-center {
+    text-align: center !important; }
+  /* line 182, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .xxlarge-text-justify {
+    text-align: justify !important; } }
+
+/* Typography resets */
+/* line 224, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+  margin: 0;
+  padding: 0; }
+
+/* Default Link Styles */
+/* line 230, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+a {
+  color: #a9014b;
+  text-decoration: none;
+  line-height: inherit; }
+  /* line 236, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  a:hover, a:focus {
+    color: #910142; }
+  /* line 238, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  a img {
+    border: none; }
+
+/* Default paragraph styles */
+/* line 242, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+p {
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  text-rendering: optimizeLegibility; }
+  /* line 250, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  p.lead {
+    font-size: 1.21875rem;
+    line-height: 1.6; }
+  /* line 252, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  p aside {
+    font-size: 0.875rem;
+    line-height: 1.35;
+    font-style: italic; }
+
+/* Default header styles */
+/* line 260, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #bbbbbb;
+  text-rendering: optimizeLegibility;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4; }
+  /* line 270, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+    font-size: 60%;
+    color: lightgrey;
+    line-height: 0; }
+
+/* line 277, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+h1 {
+  font-size: 2.125rem; }
+
+/* line 278, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+h2 {
+  font-size: 1.6875rem; }
+
+/* line 279, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+h3 {
+  font-size: 1.375rem; }
+
+/* line 280, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+h4 {
+  font-size: 1.125rem; }
+
+/* line 281, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+h5 {
+  font-size: 1.125rem; }
+
+/* line 282, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+h6 {
+  font-size: 1rem; }
+
+/* line 284, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+.subheader {
+  line-height: 1.4;
+  color: lightgrey;
+  font-weight: normal;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem; }
+
+/* line 286, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+hr {
+  border: solid #dddddd;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 1.25rem 0 1.1875rem;
+  height: 0; }
+
+/* Helpful Typography Defaults */
+/* line 296, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+em, i {
+  font-style: italic;
+  line-height: inherit; }
+
+/* line 302, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+strong, b {
+  font-weight: bold;
+  line-height: inherit; }
+
+/* line 307, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+small {
+  font-size: 60%;
+  line-height: inherit; }
+
+/* line 312, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+code {
+  font-family: Consolas, 'Liberation Mono', Courier, monospace;
+  font-weight: bold;
+  color: #bd240d; }
+
+/* Lists */
+/* line 321, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+ul, ol, dl {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  list-style-position: outside;
+  font-family: inherit; }
+
+/* line 329, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+ul {
+  margin-left: 1.1rem; }
+  /* line 331, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  ul.no-bullet {
+    margin-left: 0; }
+    /* line 335, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+    ul.no-bullet li ul, ul.no-bullet li ol {
+      margin-left: 1.25rem;
+      margin-bottom: 0;
+      list-style: none; }
+
+/* Unordered Lists */
+/* line 348, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+ul li ul, ul li ol {
+  margin-left: 1.25rem;
+  margin-bottom: 0; }
+/* line 356, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+ul.square li ul, ul.circle li ul, ul.disc li ul {
+  list-style: inherit; }
+/* line 359, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+ul.square {
+  list-style-type: square;
+  margin-left: 1.1rem; }
+/* line 360, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+ul.circle {
+  list-style-type: circle;
+  margin-left: 1.1rem; }
+/* line 361, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+ul.disc {
+  list-style-type: disc;
+  margin-left: 1.1rem; }
+/* line 362, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+ul.no-bullet {
+  list-style: none; }
+
+/* Ordered Lists */
+/* line 366, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+ol {
+  margin-left: 1.4rem; }
+  /* line 370, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  ol li ul, ol li ol {
+    margin-left: 1.25rem;
+    margin-bottom: 0; }
+
+/* Definition Lists */
+/* line 379, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+dl dt {
+  margin-bottom: 0.3rem;
+  font-weight: bold; }
+/* line 383, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+dl dd {
+  margin-bottom: 0.75rem; }
+
+/* Abbreviations */
+/* line 388, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+abbr, acronym {
+  text-transform: uppercase;
+  font-size: 90%;
+  color: #cccccc;
+  border-bottom: 1px dotted #dddddd;
+  cursor: help; }
+
+/* line 395, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+abbr {
+  text-transform: none; }
+
+/* Blockquotes */
+/* line 400, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+blockquote {
+  margin: 0 0 1.25rem;
+  padding: 0.5625rem 1.25rem 0 1.1875rem;
+  border-left: 1px solid #dddddd; }
+  /* line 405, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  blockquote cite {
+    display: block;
+    font-size: 0.8125rem;
+    color: #cbcbcb; }
+    /* line 409, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+    blockquote cite:before {
+      content: "\2014 \0020"; }
+    /* line 414, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+    blockquote cite a, blockquote cite a:visited {
+      color: #cbcbcb; }
+
+/* line 420, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+blockquote, blockquote p {
+  line-height: 1.6;
+  color: lightgrey; }
+
+/* Microformats */
+/* line 426, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+.vcard {
+  display: inline-block;
+  margin: 0 0 1.25rem 0;
+  border: 1px solid #dddddd;
+  padding: 0.625rem 0.75rem; }
+  /* line 432, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .vcard li {
+    margin: 0;
+    display: block; }
+  /* line 436, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .vcard .fn {
+    font-weight: bold;
+    font-size: 0.9375rem; }
+
+/* line 443, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+.vevent .summary {
+  font-weight: bold; }
+/* line 445, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+.vevent abbr {
+  cursor: default;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  padding: 0 0.0625rem; }
+
+@media only screen and (min-width:40.063em) {
+  /* line 456, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.4; }
+  /* line 457, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  h1 {
+    font-size: 2.75rem; }
+  /* line 458, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  h2 {
+    font-size: 2.3125rem; }
+  /* line 459, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  h3 {
+    font-size: 1.6875rem; }
+  /* line 460, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  h4 {
+    font-size: 1.4375rem; } }
+
+/*
+       * Print styles.
+       *
+       * Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
+       * Credit to Paul Irish and HTML5 Boilerplate (html5boilerplate.com)
+      */
+/* line 471, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+.print-only {
+  display: none !important; }
+
+@media print {
+  @page {
+    margin: 0.5cm; }
+
+  /* line 473, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  * {
+    background: transparent !important;
+    color: black !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important; }
+  /* line 481, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  a, a:visited {
+    text-decoration: underline; }
+  /* line 482, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+  /* line 484, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+  /* line 489, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: ""; }
+  /* line 492, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  pre, blockquote {
+    border: 1px solid #999999;
+    page-break-inside: avoid; }
+  /* line 497, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */ }
+  /* line 500, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  tr, img {
+    page-break-inside: avoid; }
+  /* line 502, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  img {
+    max-width: 100% !important; }
+  /* line 508, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3; }
+  /* line 514, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  h2, h3 {
+    page-break-after: avoid; }
+  /* line 516, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .hide-on-print {
+    display: none !important; }
+  /* line 517, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .print-only {
+    display: block !important; }
+  /* line 518, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .hide-for-print {
+    display: none !important; }
+  /* line 519, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/type */
+  .show-for-print {
+    display: inherit !important; } }
+
+@font-face {
+  font-family: Simplifica;
+  src: url('../fonts/simplifica.ttf'); }
+
+/* line 11, /home/james/www/presentator/presentor/static/presentor/scss/show.scss */
+body.inverse {
+  background: #6bc5ab; }
+
+/* line 15, /home/james/www/presentator/presentor/static/presentor/scss/show.scss */
+#slide-container {
+  padding: 60px 40px 20px 260px; }
+
+/* line 19, /home/james/www/presentator/presentor/static/presentor/scss/show.scss */
+#slide-container h2 {
+  font-family: Simplifica, 'WenQuanYi Zen Hei Sharp Medium', serif;
+  text-shadow: 0px 2px 5px black;
+  color: #6bc5ab; }
+
+/* line 25, /home/james/www/presentator/presentor/static/presentor/scss/show.scss */
+#slide-container h2.inverse {
+  color: #333333;
+  text-shadow: rgba(0, 0, 0, 0.25) 0px 1px 2px; }

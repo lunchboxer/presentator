@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 
 class Presentation(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=50)
     slides = models.TextField()
 
     def __unicode__(self):

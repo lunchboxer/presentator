@@ -51,7 +51,6 @@ if (sess === null ){
 }
 
 function alertConnection() {
-    console.log("this is a test");
     if( all_connected === false ){
         showAlert("Display and cotroller not connected.", "warning");
     } else if (all_connected_reported === false){
@@ -147,8 +146,12 @@ function deactivateButton(buttonId){
 }
 
 function loadSlideList(){
-    $("#main").load("/presentor/listslideshows", function(){
-        // hide the menu link for now active page
-        $("#showlist").parent().hide();
-    });
+    if ( all_connected ) {
+        $("#main").load("/presentor/listslideshows", function(){
+            // hide the menu link for now active page
+            $("#showlist").parent().hide();
+        });
+    } else {
+        showAlert("Presenter not connected. Cannot run slideshow.", "warning");
+    }
 }

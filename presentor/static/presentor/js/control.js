@@ -35,7 +35,7 @@ if (sess === null ){
         // WAMP session is gone
         function (code, reason) {
             sess = null;
-            if (code == ab.CONNECTION_UNSUPPORTED) {
+            if (code === ab.CONNECTION_UNSUPPORTED) {
             window.location = "http://autobahn.ws/unsupportedbrowser";
             } else {
             console.log(reason);

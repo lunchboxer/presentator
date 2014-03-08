@@ -51,6 +51,140 @@ $(document).ready(function() {
     {% else %}
         getLogin(); 
     {% endif %}
+  {% else %}
+    loadPage("logIn")
+  {% endif %}
+
+  $(document).ajaxStart(function() {
+    $("#loading_indicator").show()
+  }).ajaxStop(function() {
+    $("#loading_indicator").hide()
+  })
+
+  // hack to hide the menu when a menu item is clicked
+  $('.top-bar .menuitem').click(function(){
+    $(".toggle-topbar").trigger("click")
+  })
+
+})
+
+<!--var navMan = -->
+  <!--{ navlist: 'section.top-bar-section.navlinks ul.right'-->
+    <!--// the smarter way to do this is to have master list with all the links and their properties, then groups which are just simple lists of names which link to the property names. later-->
+    <!--// also fro some reason about isn't loading into the menu correctly.-->
+    <!--// add them all once then show and hide them by class name later, its easier-->
+  <!--, navlinks:  // Write the property names in camelCase, they'd be converted to human English.-->
+    <!--// name     :   icon-->
+    <!--{ "controls" : "gamepad"-->
+    <!--, "studentView" : "user"-->
+    <!--, "logOut" : "sign-out"-->
+    <!--, "slideshows" : "suitcase"-->
+    <!--, "notes" : "file-text-o"-->
+    <!--, "settings" : "gear"-->
+    <!--,  "logIn" : "sign-in"-->
+    <!--, "about": "question-circle"-->
+    <!--}-->
+  <!--, navgroups:-->
+    <!--{ "all" : ["about"]-->
+    <!--, "loggedin" : ["controls", "studentView", "logOut", "slideshows", "notes", "settings"]-->
+    <!--, "loggedout" : ["logIn"]-->
+    <!--}-->
+  <!--, iconprefix: "fa fa-"-->
+  <!--, build: function(current) {-->
+      <!--var navlist = $(this.navlist)-->
+      <!--navlist.html("")-->
+      <!--if (authenticated ) {-->
+        <!--group = "loggedin"-->
+      <!--} else {-->
+        <!--group = "loggedout"-->
+      <!--}-->
+      <!--var linkgroup = this.navgroups[group]-->
+      <!--var biglinkgroup = linkgroup.concat(this.navgroups.all)-->
+      <!--for ( var i in biglinkgroup ){-->
+        <!--var link = biglinkgroup[i]-->
+        <!--var linkText = unCamel(link)-->
+        <!--if ( current !== link ){-->
+          <!--var $newMenuItem = $('<li class="menuitem"></li>')-->
+          <!--var $newLink = $('<a href="#" id="' + link + 'link">')-->
+          <!--var linkLabel = '<i class="' + this.iconprefix + this.navlinks[link] + '"></i> ' + linkText-->
+          <!--$newLink.append(linkLabel)-->
+          <!--$newMenuItem.append($newLink)-->
+          <!--navlist.append($newMenuItem)-->
+        <!--}-->
+      <!--}-->
+      <!--this.addClicks()-->
+    <!--}-->
+    <!--// new method to register all the click events for the links-->
+    <!--// its a little dangerous but we can do window.["load" + variable ]()-->
+    <!--, addClicks: function(){-->
+      <!--for (var link in this.navlinks){-->
+        <!--$("#" + link + "link").click(function(){-->
+            <!--loadPage(link)-->
+        <!--})-->
+      <!--}-->
+    <!--}-->
+      
+<!--}-->
+
+<!--// Convert camelCase to capitalized human text. "helloWorld" -> "Hello World"-->
+<!--function unCamel(str) {-->
+  <!--console.log("unCamel called on " + str)-->
+  <!--var out = str.replace(/^[a-z]|[^\s][A-Z]/g, function(str, offset) {-->
+    <!--if (offset == 0) {-->
+      <!--return(str.toUpperCase())-->
+    <!--} else {-->
+      <!--return(str.substr(0,1) + " " + str.substr(1).toUpperCase())-->
+    <!--}-->
+  <!--})-->
+  <!--return(out)-->
+<!--}-->
+
+<!--// Mostly called from navlink menu, but can load anything-->
+<!--function loadPage(page, args){-->
+  <!--console.log("loadPage called with " + page)-->
+  <!--switch (page) {-->
+    <!--case "slideshows":-->
+      <!--if ( all_connected ) {-->
+        <!--$("#main").load("/presentor/listslideshows")-->
+      <!--} else { -->
+        <!--showAlert("Presenter not connected. Cannot run slideshow.", "warning")-->
+      <!--}-->
+      <!--break-->
+    <!--case "logOut":-->
+      <!--if ( args === "local" ){-->
+        <!--showAlert("You are now logged out.", "success")-->
+      <!--} else { -->
+        <!--$.getJSON('/accounts/ajaxlogout').done(function(response){    -->
+          <!--if(response.logout === "success") showAlert("You are now logged out.", "success")-->
+          <!--else showAlert("Unable to log out, perhaps you were already logged out.", "warning")-->
+        <!--})-->
+      <!--}-->
+      <!--loadPage("logIn")-->
+      <!--authenticated = false-->
+      <!--break-->
+    <!--case "logIn":-->
+      <!--var errorsFunct = function() {-->
+        <!--showAlert("Enter a valid username and password.", "warning")-->
+      <!--}-->
+      <!--getAuth("/accounts/ajaxlogin", "login", errorsFunct)-->
+      <!--break-->
+    <!--[>case "about":<]-->
+      <!--[>$("#main").load("/presentor/about")<]-->
+      <!--[>break<]-->
+    <!--case "controls":-->
+      <!--$.ajax(-->
+        <!--{ url: "{% static 'presentor/js/control.js' %}"-->
+        <!--, cache: true-->
+        <!--, dataType: "script"-->
+        <!--}-->
+      <!--)-->
+      <!--break-->
+    <!--case "studentView":-->
+      <!--break-->
+  <!--}-->
+
+  <!--navMan.build(page)-->
+<!--}-->
 
     $('#logoutlink').click(function(){
         logout();

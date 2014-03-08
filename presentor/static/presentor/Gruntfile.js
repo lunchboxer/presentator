@@ -55,7 +55,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: 'js/lib/*.js',
-        tasks: ['concat:common', 'uglify']
+        tasks: ['uglify']
       },
       staticdirs: {
         files: ['js/*.js', 'css/*.css', 'img/*', 'fonts/*', 'index.html', 'robots.txt'],

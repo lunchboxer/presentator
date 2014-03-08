@@ -188,7 +188,7 @@ html, body {
 
 /* line 307, /home/james/www/presentator/presentor/static/presentor/scss/foundation/components/global */
 body {
-  background: #333333;
+  background: #222222;
   color: #cccccc;
   padding: 0;
   margin: 0;
@@ -4395,39 +4395,51 @@ blockquote, blockquote p {
 .fa-plus-square-o:before {
   content: "\f196"; }
 
+/* line 45, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+body {
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 5px, #1f1f1f 5px, #1f1f1f 10px); }
+
 /*disable tap highlight and touch callout menu for links on mobile*/
-/* line 46, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+/* line 49, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
 * {
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
-/* line 50, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+/* line 53, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
 label {
   color: #cecece; }
 
-/* line 54, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+/* line 56, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+.button {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px; }
+
+/* line 60, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+#status {
+  padding: 0.3em; }
+
+/* line 63, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
 #main {
   padding: 1em; }
 
-/* line 57, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+/* line 66, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
 .hidden {
   display: none; }
 
-/* line 58, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+/* line 67, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
 .formerror {
   color: red;
   font-size: 0.8em; }
 
-/* line 63, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+/* line 72, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
 #controls {
   padding-top: 20px;
   text-align: center; }
 
-/* line 68, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+/* line 77, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
 nav.top-bar {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 4px; }
 
-/* line 72, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+/* line 81, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
 #controls i.fa {
   font-size: 5em;
   cursor: default;
@@ -4439,36 +4451,36 @@ nav.top-bar {
   text-shadow: rgba(0, 0, 0, 0.25) 0px 2px 3px;
   -moz-box-sizing: border-box; }
 
-/* line 83, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+/* line 92, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
 #controls i.fa:active {
   color: #fe127c;
   text-shadow: #fe127c 0 0 1.5em; }
 
-/* line 88, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+/* line 97, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
 #controls i.disabled {
   color: #3e3e3e; }
 
-/* line 89, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+/* line 98, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
 #controls i.disabled:active {
   color: #3e3e3e;
   text-shadow: rgba(0, 0, 0, 0.25) 0 2px 3px; }
 
-/* line 94, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+/* line 103, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
 #status {
   height: 2em; }
 
-/* line 97, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+/* line 106, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
 #pushnote {
   padding: 1em; }
 
-/* line 100, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+/* line 109, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
 #answers {
   font-size: 1.5em;
   list-style-type: none;
   padding: 0;
   margin: 0; }
 
-/* line 106, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+/* line 115, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
 .mcButton {
   border-style: solid;
   border-width: 0px;
@@ -4502,19 +4514,19 @@ nav.top-bar {
   .mcButton:hover, .mcButton:focus {
     color: white; }
 
-/* line 112, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+/* line 121, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
 .mcButton:visited {
   background-color: #a9014b; }
 
-/* line 113, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+/* line 122, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
 .mcButton:hover, .mcButton:active {
   background-color: #760136; }
 
-/* line 115, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+/* line 124, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
 .flash {
   background-color: white; }
 
-/* line 118, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+/* line 127, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
 #bang {
   position: absolute;
   top: 0;
@@ -4523,7 +4535,7 @@ nav.top-bar {
   height: 100%;
   z-index: 999; }
 
-/* line 126, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
+/* line 135, /home/james/www/presentator/presentor/static/presentor/scss/app.scss */
 #loading_indicator {
   width: 140px;
   position: absolute;

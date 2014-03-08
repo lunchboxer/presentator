@@ -42,6 +42,9 @@
 
 @import "font-awesome/font-awesome";
 
+body {
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 5px, darken($body-bg, 1) 5px, darken($body-bg, 1) 10px);
+}
 /*disable tap highlight and touch callout menu for links on mobile*/
 * {
     -webkit-touch-callout: none;
@@ -50,7 +53,13 @@
 label {
     color: darken($secondary-color, 10);
 }
+.button {
+    box-shadow: rgba(0,0,0,0.25) 0px 2px 3px;
+}
 
+#status {
+    padding: 0.3em;
+}
 #main {
     padding: 1em;
 }

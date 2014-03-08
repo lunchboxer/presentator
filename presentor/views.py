@@ -37,6 +37,10 @@ def play(request):
     return render(request, 'presentor/play.html')
 
 
+def about(request):
+    return render(request, 'presentor/about.html')
+
+
 def listslideshows(request):
     slideshows = Presentation.objects.values()
     showslist = []

@@ -45,3 +45,4 @@ fabfile.py
 node_modules
 /static/
 /notes.txt
+*.log

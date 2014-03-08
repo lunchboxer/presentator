@@ -16,9 +16,9 @@
 
 {% block jsfoot2 %}
 
-<script type="text/javascript" src="{% static 'presentor/js/show_combined.min.js' %}"></script>
+<script src="{% static 'presentor/js/show_combined.min.js' %}"></script>
 
-<script type="text/javascript" charset="utf-8">
+<script>
 // WAMP session object
 var sess = null;
 
@@ -28,17 +28,17 @@ var showid = false;
 var showtitle = "";
 
 window.onload = function() {
- 
+
    var wsuri;
    if (window.location.protocol === "file:") {
       wsuri = "ws://192.168.1.106:9000";
    } else {
       wsuri = "ws://" + window.location.hostname + ":9000";
    }
- 
+
    // connect to WAMP server
    ab.connect(wsuri,
- 
+
       // WAMP session was established
       function (session) {
          sess = session;
@@ -46,7 +46,7 @@ window.onload = function() {
         sess.subscribe("http://192.168.1.106/messages", onEvent);
         publishCommand("screen_connected");
       },
- 
+
       // WAMP session is gone
       function (code, reason) {
          sess = null;
@@ -58,7 +58,7 @@ window.onload = function() {
       }
    );
 };
- 
+
 function onEvent(topicUri, event) {
     if ( event.command === "nextSlide" ){
         nextSlide();
@@ -73,7 +73,7 @@ function onEvent(topicUri, event) {
         playSlideshow(event.data);
     }
 }
- 
+
 function publishCommand(command, data) {
    sess.publish("http://192.168.1.106/messages", {'command': command, 'data': data});
 }
@@ -88,7 +88,7 @@ function nextSlide(){
         $('.slide.' + slidenumber).show();
         hollaBack();
         $('body').toggleClass("inverse");
-        $('#slide-container h2').toggleClass("inverse"); 
+        $('#slide-container h2').toggleClass("inverse");
     }
 }
 function previousSlide(){
@@ -98,7 +98,7 @@ function previousSlide(){
         $('.slide.' + slidenumber).show();
         hollaBack();
         $('body').toggleClass("inverse");
-        $('#slide-container h2').toggleClass("inverse"); 
+        $('#slide-container h2').toggleClass("inverse");
     }
 }
 
